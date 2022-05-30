@@ -1,0 +1,15 @@
+<p>rayon works!</p>
+
+
+<nb-card>
+    <nb-card-header>
+      Liste des rayons
+    </nb-card-header>
+    
+    <nb-card-body>
+    
+      <ng2-smart-table [settings]="settings" [source]="rayons" (deleteConfirm)="onDeleteConfirm($event)" (editConfirm)="onSaveConfirm($event)" (createConfirm)="addRecord($event)">
+        
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>

@@ -1,0 +1,53 @@
+
+
+<nb-card>
+    <nb-card-header>
+      Liste des produits
+    </nb-card-header>
+    
+    
+<div style="display: flex;
+justify-content: space-around;
+height: 63px;
+margin-top: 20px;">
+  <div style="width: 40%;
+  border: groove;
+  height: 46px;
+  background-color: lightblue;
+  border-radius: 10px;">
+    <angular2-multiselect [data]="couleurs" 
+    [(ngModel)]="selectedItems"
+    (onSelect)="onItemSelect($event)"
+    (onDeSelect)="OnItemDeSelect($event)" 
+    (onSelectAll)="onSelectAll($event)" 
+    (onDeSelectAll)="onDeSelectAll($event)"
+    style="
+    color: #333 !important;">
+    </angular2-multiselect>
+  </div>
+  <div style="width: 40%;
+  border: groove;
+  height: 46px;
+  background-color: lightblue;
+  border-radius: 10px;">
+    
+    <angular2-multiselect [data]="tailles" 
+    [(ngModel)]="selectedItemsTaille"
+    (onSelect)="onItemSelectTaille($event)"
+    (onDeSelect)="OnItemDeSelectTaille($event)" 
+    (onSelectAll)="onSelectAllTaille($event)" 
+    (onDeSelectAll)="onDeSelectAllTaille($event)"
+    style="
+    color: #333 !important;">
+    </angular2-multiselect>
+  </div>
+  
+
+</div>
+      
+<ngx-multiselect></ngx-multiselect>
+      <ng2-smart-table [settings]="settings" [source]="products" (deleteConfirm)="onDeleteConfirm($event)" (editConfirm)="onSaveConfirm($event)" (createConfirm)="addRecord($event)">
+        
+      </ng2-smart-table>
+    
+  </nb-card>

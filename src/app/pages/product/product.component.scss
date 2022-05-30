@@ -1,0 +1,15 @@
+.pure-checkbox input[type=checkbox]+label:before {
+    box-sizing: revert;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 15px; ;
+    left: 1px;
+    width: 15px;
+    height: 15px;
+    margin-top: -9px;
+    text-align: center;
+    transition: all .4s ease;
+    border-radius: 3px;
+    background-color: gainsboro;
+}
