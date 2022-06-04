@@ -1,9 +1,11 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../Models/product';
+import { DatacategService } from '../../service/datacateg.service';
 import { DatacouleurService } from '../../service/datacouleur.service';
 import { DataproductService } from '../../service/dataproduct.service';
 import { DatarayonService } from '../../service/datarayon.service';
+import { DatasaisonService } from '../../service/datasaison.service';
 import { DatatailleService } from '../../service/datataille.service';
 import { MultiselectComponent } from '../multiselect/multiselect.component';
 
@@ -16,7 +18,8 @@ export class ProductComponent  {
 
   
   listRay = this.rayonData()
-   
+   listSais = this.saisonData()
+   listCateg = this.categData()
   settings = {
     actions:{position:'right' },
     add: {
@@ -74,7 +77,7 @@ export class ProductComponent  {
       id_rayon: {
         title: 'rayon',
         type: 'html',
-        width : '80%',
+        width : '50%',
         editor:{ type: 'list',
          config: { 
            selectText: 'Select',
@@ -82,15 +85,39 @@ export class ProductComponent  {
            }
           },
       },
+      id_saison: {
+        title: 'saison',
+        type: 'html',
+        width : '50%',
+        editor:{ type: 'list',
+         config: { 
+           selectText: 'Select',
+            list:this.listSais
+           }
+          },         
+      },
+      id_categ: {
+        title: 'categorie',
+        type: 'html',
+        width : '50%',
+        editor:{ type: 'list',
+         config: { 
+           selectText: 'Select',
+            list:this.listCateg
+           }
+          },         
+      },    
       },  
   };
-  rayons:any;
+
   ray:any;
   tailles:any;
   products:any;
   product=new Product;
   couleurs: any;
-  constructor(private seviceProd:DataproductService,private httpClient:HttpClient,private serviceCouleur:DatacouleurService,private serviceTaille:DatatailleService,private serviceRay:DatarayonService) { 
+  sais:any;
+  categ:any;
+  constructor(private seviceProd:DataproductService,private httpClient:HttpClient,private serviceCouleur:DatacouleurService,private serviceTaille:DatatailleService,private serviceRay:DatarayonService,private serviceSais:DatasaisonService,private serviceCateg:DatacategService) { 
     const data : any = this.seviceProd.getData();
     this.seviceProd.getData().subscribe(res =>{
       console.log(res);
@@ -220,7 +247,38 @@ console.log('colorssssss' , this.colorsIdToSend());
           
           });
         }
+
+        saisonData(){
+          var settingList: any=[];
+          this.serviceSais.getData().subscribe(res=>{
+            this.sais = res;
+            this.sais.forEach(obj => {
+              settingList.push({value:obj.id,title:obj.nom_saison})
+              
+            });
+            let newSettings = this.settings;
+            newSettings.columns.id_saison.editor.config.list=settingList;
+            this.settings = Object.assign({},this.settings);
+          
+          });
+        }
+
+        categData(){
+          var settingList: any=[];
+          this.serviceCateg.getData().subscribe(res=>{
+            this.categ = res;
+            this.categ.forEach(obj => {
+              settingList.push({value:obj.id,title:obj.nom_categ})
+              
+            });
+            let newSettings = this.settings;
+            newSettings.columns.id_categ.editor.config.list=settingList;
+            this.settings = Object.assign({},this.settings);
+          
+          });
+        }
     }
   
 
 
+  

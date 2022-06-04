@@ -9,7 +9,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
   templateUrl: './couleur.component.html',
   styleUrls: ['./couleur.component.scss']
 })
-export class CouleurComponent  {
+export class CouleurComponent implements OnInit {
   settings = {
     actions:{position:'right' },
     add: {
@@ -29,12 +29,7 @@ export class CouleurComponent  {
       confirmDelete: true,
     },
     columns: {
-      /*id: {
-        title: 'ID',
-        type: 'any',
-        editable : false,
-        addable: false
-      },*/
+    
       nom_couleur: {
         title: 'Couleur',
         type: 'any',
@@ -101,7 +96,10 @@ onDeleteConfirm(event): void {
         }
       });
   }
+ngOnInit() {
+  this
 
+}
 }
  
 

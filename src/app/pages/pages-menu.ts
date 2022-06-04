@@ -21,6 +21,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/product',
   },
   {
+    title: 'List des categories',
+    link: '/categories',
+  },
+  {
     title: 'List des couleurs',
     link: '/couleurs',
   },

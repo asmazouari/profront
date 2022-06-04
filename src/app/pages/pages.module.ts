@@ -23,6 +23,7 @@ import { RayonComponent } from './rayon/rayon.component';
 import { ProductComponent } from './product/product.component';
 import { MultiselectComponent } from './multiselect/multiselect.component';
 import { MagasinComponent } from './magasin/magasin.component';
+import { CategorieComponent } from './categorie/categorie.component';
 
 
 
@@ -56,7 +57,8 @@ import { MagasinComponent } from './magasin/magasin.component';
     RayonComponent,
     ProductComponent,
     MultiselectComponent,
-    MagasinComponent    
+    MagasinComponent,
+    CategorieComponent    
   ],
 
   entryComponents: [

@@ -12,6 +12,7 @@ import { RayonComponent } from './rayon/rayon.component';
 import { ProductComponent } from './product/product.component';
 import { MagasinComponent } from './magasin/magasin.component';
 import { SaisonComponent } from './saison/saison.component';
+import { CategorieComponent } from './categorie/categorie.component';
 
 
 
@@ -111,6 +112,10 @@ const routes: Routes = [
     {
       path: 'saisons',
       component: SaisonComponent,
+    },
+    {
+      path: 'categories',
+      component: CategorieComponent,
     },
     {
    
