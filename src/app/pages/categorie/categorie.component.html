@@ -1,0 +1,12 @@
+<p>categorie works!</p>
+<nb-card>
+    <nb-card-header>
+      Liste des categories
+    </nb-card-header>
+    
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="categories" (deleteConfirm)="onDeleteConfirm($event)" (editConfirm)="onSaveConfirm($event)" (createConfirm)="addRecord($event)">
+        
+      </ng2-smart-table>
+    </nb-card-body>
+  </nb-card>
