@@ -87,7 +87,7 @@ export class RayonComponent  {
     }
     onSaveConfirm(event) : void {
       var data = {"nom_rayon" : event.newData.nom_rayon,    
-                };
+                  "id_mag": event.newData.id_mag };
       this.httpClient.put<Rayon>('http://127.0.0.1:8000/api/updateRayon/'+event.newData.id, data).subscribe(
         res => {
           console.log(res);

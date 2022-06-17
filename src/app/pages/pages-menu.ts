@@ -4,48 +4,51 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: 'Dashboard',
     icon: 'shopping-cart-outline',
-    link: '/pages/dashboard',
+    link: '/home/dashboard',
     home: true,
   },
   {
     title: 'Caisse',
     icon: 'home-outline',
-    link: '/iot-dashboard',
+    link: '/home/iot-dashboard',
   },
   {
     title: 'MAGASIN',
     group: true,
   },
   {
-    title: 'List des produits',
-    link: '/product',
+    title: 'Liste des produits',
+    link: '/home/product',
   },
   {
-    title: 'List des categories',
-    link: '/categories',
+    title: 'Liste des déclinaisons',
+    link: '/home/declinaisons',
   },
   {
-    title: 'List des couleurs',
-    link: '/couleurs',
+    title: 'Liste des catégories',
+    link: '/home/categories',
   },
   {
-    title: 'List des rayons',
-    link: '/rayons',
+    title: 'Liste des couleurs',
+    link: '/home/couleurs',
   },
   {
-    title: 'List des tailles',
-    link: '/tailles',
-  },
-
-  {
-    title: 'List des magasins',
-    link: '/magasins',
+    title: 'Liste des rayons',
+    link: '/home/rayons',
   },
   {
-    title: 'List des saison',
-    link: '/saisons',
+    title: 'Liste des tailles',
+    link: '/home/tailles',
   },
   {
+    title: 'Liste des magasins',
+    link: '/home/magasins',
+  },
+  {
+    title: 'Liste des saisons',
+    link: '/home/saisons',
+  },
+  /*{
     title: 'Layout',
     icon: 'layout-outline',
     children: [
@@ -272,5 +275,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/auth/reset-password',
       },
     ],
-  },
+  },*/
 ];

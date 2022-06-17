@@ -161,9 +161,10 @@ export class ProductComponent  {
     onSaveConfirm(event) : void {
       var data = {    "Ref_prod":event.newData.Ref_prod,"nom_prod" : event.newData.nom_prod,
       "id_rayon":event.newData.id_rayon,"id_saison":event.newData.id_saison,
-      "id_categ":event.newData.id_categ, "description":event.newData.description,"tva" : event.newData.tva,"prix_ht":event.newData.prix_ht,
-      "prix_ttc" : event.newData.prix_ttc , "colors":this.colorsIdToSend() , "tailles" : this.taillesIdToSend()
-                };
+      "id_categ":event.newData.id_categ, "description":event.newData.description,"tva" : event.newData.tva,
+      "prix_ht":event.newData.prix_ht,"prix_ttc" : event.newData.prix_ttc , 
+      "colors":this.colorsIdToSend() , "tailles" : this.taillesIdToSend()
+        };
       this.httpClient.put<Product>('http://127.0.0.1:8000/api/updateproduit/'+event.newData.id, data).subscribe(
         res => {
           console.log(res);
@@ -216,10 +217,11 @@ export class ProductComponent  {
 addRecord(event) {
       
 console.log('colorssssss' , this.colorsIdToSend());
-      var data = {"Ref_prod":event.newData.Ref_prod,"nom_prod" : event.newData.nom_prod,"id_rayon":2,"id_saison":1,
-      "id_categ":1,"description":event.newData.description,"tva" : event.newData.tva,"prix_ht":event.newData.prix_ht,
-      "prix_ttc" : event.newData.prix_ttc , "colors": this.colorsIdToSend() , "tailles" : this.taillesIdToSend()
-                  };
+      var data = {"Ref_prod":event.newData.Ref_prod,"nom_prod" : event.newData.nom_prod,"id_rayon":event.newData.id_rayon,
+      "id_saison":event.newData.id_saison, "id_categ":event.newData.id_categ,"description":event.newData.description, 
+      "tva" : event.newData.tva, "prix_ht":event.newData.prix_ht, "prix_ttc" : event.newData.prix_ttc, 
+      "colors": this.colorsIdToSend() , "tailles" : this.taillesIdToSend()
+        };
     this.httpClient.post<Product>('http://127.0.0.1:8000/api/addproduit', data).subscribe(
           res => {
             console.log(res);

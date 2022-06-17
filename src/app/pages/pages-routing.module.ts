@@ -13,6 +13,9 @@ import { ProductComponent } from './product/product.component';
 import { MagasinComponent } from './magasin/magasin.component';
 import { SaisonComponent } from './saison/saison.component';
 import { CategorieComponent } from './categorie/categorie.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuardService as AuthGuard } from '../service/auth-guard.service';
+import { DeclinaisonComponent } from './declinaison/declinaison.component';
 
 
 
@@ -26,6 +29,7 @@ const routes: Routes = [
     {
       path: 'dashboard',
       component: ECommerceComponent,
+      canActivate: [AuthGuard]
     },
     {
       path: 'iot-dashboard',
@@ -90,32 +94,44 @@ const routes: Routes = [
     {
       path: 'product',
       component: ProductComponent,
+      canActivate: [AuthGuard]
     },
    
     {
       path: 'couleurs',
       component: CouleurComponent,
+      canActivate: [AuthGuard]
     },
 
     {
       path: 'tailles',
       component: TailleComponent,
+      canActivate: [AuthGuard]
     },
     {
       path: 'rayons',
       component: RayonComponent,
+      canActivate: [AuthGuard]
     },
     {
       path: 'magasins',
       component: MagasinComponent,
+      canActivate: [AuthGuard]
     },
     {
       path: 'saisons',
       component: SaisonComponent,
+      canActivate: [AuthGuard]
     },
     {
       path: 'categories',
       component: CategorieComponent,
+      canActivate: [AuthGuard]
+    },
+    {
+      path: 'declinaisons',
+      component: DeclinaisonComponent,
+      canActivate: [AuthGuard]
     },
     {
    

@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TailleComponent } from './taille/taille.component';
 import { SaisonComponent } from './saison/saison.component';
 import { CouleurComponent } from './couleur/couleur.component';
@@ -24,6 +24,8 @@ import { ProductComponent } from './product/product.component';
 import { MultiselectComponent } from './multiselect/multiselect.component';
 import { MagasinComponent } from './magasin/magasin.component';
 import { CategorieComponent } from './categorie/categorie.component';
+import { LoginComponent } from './login/login.component';
+import { DeclinaisonComponent } from './declinaison/declinaison.component';
 
 
 
@@ -45,7 +47,8 @@ import { CategorieComponent } from './categorie/categorie.component';
     NbSelectModule,
   AngularMultiSelectModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
     
     
   ],
@@ -58,7 +61,9 @@ import { CategorieComponent } from './categorie/categorie.component';
     ProductComponent,
     MultiselectComponent,
     MagasinComponent,
-    CategorieComponent    
+    CategorieComponent,
+    DeclinaisonComponent,
+  
   ],
 
   entryComponents: [
